@@ -1,0 +1,2 @@
+﻿Get-ADUser -Filter * -SearchBase “ou=finance,dc=ucertify,dc=com” -Properties DisplayName,PostalCode,MobilePhone,OfficePhone > $PSScriptRoot\AdResults.txt
+Invoke-Sqlcmd -Database ClientDB -ServerInstance .\ucertify3 -Query ‘SELECT * FROM dbo.Client_A_Contacts’ > $PSScriptRoot\SqlResults.txt
